@@ -12,7 +12,7 @@ turn = 0
 while playing:
     os.system("cls")
     draw_board(spots)
-    user_choice = input('').lower()
+    user_choice = input(f"Player {(turn%2) + 1}'s turn: Pick your spot or type 'quit' to quit the game: ").lower()
     if user_choice == 'quit':
         playing = False
         print('You have quited the game.')
@@ -22,6 +22,10 @@ while playing:
         except ValueError:
             print('Please enter a valid number!')
         else:
-            turn += 1
-            spots.update({int(user_choice): check_turn(turn)})
+            if int(user_choice) in spots:
+                if not spots[int(user_choice)] in {'X', 'O'}:
+                    turn += 1
+                    spots.update({int(user_choice): check_turn(turn)})
+                else:
+                    print('You have already chose this spot please try again with a different one')
 
