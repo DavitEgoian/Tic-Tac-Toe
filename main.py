@@ -11,6 +11,8 @@ turn = 0
 
 while playing:
     #os.system("cls" if os.name == 'nt' else 'clear')
+    print('\n' * 80)
+
     draw_board(spots)
     user_choice = input(f"Player {(turn%2) + 1}'s turn: Pick your spot or type 'quit' to quit the game: ").lower()
     if user_choice == 'quit':
@@ -36,6 +38,8 @@ while playing:
             playing = False
 
 #os.system("cls" if os.name == 'nt' else 'clear')
+print('\n'*80)
+
 draw_board(spots)
 if complete:
     if check_turn(turn) == 'X':
