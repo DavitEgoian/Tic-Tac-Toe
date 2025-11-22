@@ -1,20 +1,40 @@
-# Tic Tac Toe
+# ❌⭕ Tic Tac Toe
 
-A text-based version of the Tic Tac Toe game.
+A clean, text-based implementation of the classic strategy game, played directly in your terminal.
+
+## 📝 Project Overview
+
+This Python project brings the timeless pen-and-paper game to the command line. It features a robust game loop that handles two-player turns, input validation, and automatic win/draw detection. It's designed to be simple to run and easy to extend.
 
 ## 🚀 Features
 
-- Two-player, turn-based gameplay in the terminal.  
-- Win detection for rows, columns, and diagonals.  
-- Clear board drawing with numbered spots for easy selection.  
-- “Quit” command to exit the game at any time.  
-- Tie detection when all spots are filled without a winner.
+- **Interactive Gameplay**: A turn-based system for two players (Player 1 is 'X', Player 2 is 'O').
+- **Smart Win Detection**: Algorithms to instantly detect wins across rows, columns, and diagonals.
+- **Visual Board**: A clear, ASCII-art grid with numbered slots makes selecting moves intuitive.
+- **Draw Handling**: Automatically recognizes when the board is full and declares a tie.
+- **Graceful Exit**: Includes a "quit" command to leave the game cleanly at any moment.
 
-## ⚙️ Usage
+## 💻 Installation & Usage
 
-Clone the repository and run the main script, you’ll see the board displayed like this:
+### Prerequisites
+- Python 3.x
 
-```
+### Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/DavitEgoian/Tic-Tac-Toe.git
+   cd Tic-Tac-Toe
+   ```
+
+2. **Run the game**
+   ```bash
+   python main.py
+   ```
+
+### How to Play
+The board is displayed with numbers 1-9 representing the available slots:
+```text
 -------------
 | 1 | 2 | 3 |
 -------------
@@ -23,42 +43,30 @@ Clone the repository and run the main script, you’ll see the board displayed l
 | 7 | 8 | 9 |
 -------------
 ```
+When prompted, simply type the number of the spot you want to claim.
 
-On your turn, type the number of the spot you want to claim, or enter `quit` to exit.
+**Example Session:**
+> Player 1's turn: Pick your spot or type 'quit': **5**  
+> Player 2's turn: Pick your spot or type 'quit': **1**  
+> ...  
+> **Player 1 Won!**
 
-**Example session:**
+## 📂 Project Structure
 
-```
-Player 1's turn: Pick your spot or type 'quit' to quit the game: 5
-Player 2's turn: Pick your spot or type 'quit' to quit the game: 1
-Player 1's turn: Pick your spot or type 'quit' to quit the game: 9
-...
--------------
-| X | 2 | 3 |
--------------
-| 4 | O | 6 |
--------------
-| 7 | 8 | X |
--------------
-Player 1 Won!
+```text
+Tic-Tac-Toe/
+├── main.py      # The game controller: handles the loop, inputs, and game state
+└── board.py     # The view & logic: handles rendering and win condition checks
 ```
 
-## 📦 Project Structure
+## ⚙️ Customization
 
-```
-.
-├── main.py      # Game loop and user interaction
-└── board.py     # Board rendering and win/turn logic
-```
+The modular design allows for easy tinkering:
 
-- **main.py**: Handles input, turn tracking, quitting, and end‑of‑game logic.  
-- **board.py**:  
-  - `draw_board(spots)` – Renders the current board.  
-  - `check_turn(turn)` – Returns `'X'` or `'O'` based on turn count.  
-  - `check_win(spots)` – Checks whether a player has won.
+- **Symbols**: Change the `'X'` and `'O'` characters in `board.py`'s `check_turn` function to emojis or other letters.
+- **Logic**: Modify `check_win` in `board.py` to experiment with different winning patterns.
+- **AI Opponent**: Use `main.py` as a base to implement a computer opponent algorithm (like Minimax).
 
-## ✏️ Customization
+## 📄 License
 
-- Change the board size or win conditions by editing the checks in `board.py`.  
-- Swap symbols (`'X'`, `'O'`) by modifying `check_turn`.  
-- Add AI or network play by extending the main loop in `main.py`.
+This project is open source and available for personal and educational use.
